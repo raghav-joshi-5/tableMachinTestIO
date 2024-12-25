@@ -1,0 +1,26 @@
+<table
+  *ngIf="getstddata.length > 0; else noData"
+  class="table table-bordered text-white bg-dark"
+>
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th>First name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of getstddata; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.fname }}</td>
+      <td>{{ item.lname }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.contact }}</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noData>
+  <p class="alert alert-danger">No data in Table</p>
+</ng-template>
